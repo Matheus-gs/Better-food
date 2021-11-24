@@ -26,14 +26,14 @@
             <label>Gorduras Totais(g)</label>
             <input type="number" name=" gorduras_totais_produto" required min="0" placeholder="Gorduras Totais">
 
-            <label>Peso(Kg)</label>
+            <label>Peso(g)</label>
             <input type="number" name="peso_produto" required min="0" placeholder="Peso">
 
             <label>Validade</label>
             <input type="date" name="validade_produto" required min="0">
 
             <label>Lote</label>
-            <input type="number" name="lote_produto" placeholder="Lote">
+            <input type="number" name="lote_produto" placeholder="Lote" size="6" maxlength="6">
 
             <button type="submit">Cadastrar</button>
 

@@ -69,9 +69,9 @@ if (isset($_REQUEST['editar'])) {
                 <input type="number" name=" proteinas_produto" required value="<?php echo $proteinas_produto_atual ?>" min="0">
 
                 <label>Gorduras Totais(g)</label>
-                <input type="number" name=" gorduras_totais_produto" required value="<?php echo $gorduras_produto_atual ?>" min="0">
+                <input type="number" name=" gorduras_totais_produto" required value="<?php echo $gorduras_totais_produto_atual ?>" min="0">
 
-                <label>Peso(Kg)</label>
+                <label>Peso(g)</label>
                 <input type="number" name="peso_produto" required value="<?php echo $peso_produto_atual ?>" min="0">
 
                 <label>Validade</label>

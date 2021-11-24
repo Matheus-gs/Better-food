@@ -54,23 +54,36 @@
 
     $peso_produto = 'peso_produto';
 
-    $validade_produto = 'validade_produto';
-
     $lote_produto = 'lote_produto';
 
+    function Mask($mask, $str)
+    {
+
+      $str = str_replace(" ", "", $str);
+
+      for ($i = 0; $i < strlen($str); $i++) {
+        @$mask[strpos($mask, "#")] = $str[$i];
+      }
+
+      return $mask;
+    }
+
     foreach ($fetchProdutos as $key => $value) {
+
+      $validade_produto =  strtotime($value['validade_produto']);
+      $validade_produto_formatado = date('d-m-Y', $validade_produto);
 
       print "<tr>";
 
       // Colunas
       print "<td>" . $value[$id_produto] . "</td>";
       print "<td>" . $value[$nome_produto] . "</td>";
-      print "<td>" . $value[$carboidratos_produto] . "</td>";
-      print "<td>" . $value[$proteinas_produto] . "</td>";
-      print "<td>" . $value[$gorduras_totais_produto] . "</td>";
-      print "<td>" . $value[$peso_produto] . "</td>";
-      print "<td>" . $value[$validade_produto] . "</td>";
-      print "<td>" . $value[$lote_produto] . "</td>";
+      print "<td>" . number_format($value[$carboidratos_produto], 2, ',', '.') . "g" . "</td>";
+      print "<td>" . number_format($value[$proteinas_produto], 2, ',', '.') . "g" . "</td>";
+      print "<td>" . number_format($value[$gorduras_totais_produto], 2, ',', '.') . "g" . "</td>";
+      print "<td>" . number_format(($value[$peso_produto] / 1000), 2, ',', '.') . "Kg" . "</td>";
+      print "<td>" . str_replace('-', '/', $validade_produto_formatado) . "</td>";
+      print "<td>" . Mask("###-###", $value[$lote_produto]) . "</td>";
       //===== Ações =====//
 
       // Editar

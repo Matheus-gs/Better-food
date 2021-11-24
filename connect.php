@@ -2,7 +2,7 @@
 
 $server = "localhost";
 $user = "root";
-$pass = "rubik";
+$pass = "";
 
 $database = "betterfood";
 
